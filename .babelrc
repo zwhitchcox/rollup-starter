@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [ "env",
+      {
+        "modules": false
+      }
+    ],
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "external-helpers"
+  ],
+  "sourceMaps": "both"
+}
+
+
