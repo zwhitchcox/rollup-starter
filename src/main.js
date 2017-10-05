@@ -1,8 +1,8 @@
 const React = require('react')
-const ReactDOM = ('react-dom')
+const ReactDOM = require('react-dom')
 
 const root = document.querySelector('#app')
-ReactDOM.render(React.createElement('div'), root)
+ReactDOM.render(<div />, root)
 
 // Append the DummyComponent to the root element.
 

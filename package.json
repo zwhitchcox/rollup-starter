@@ -12,8 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -25,9 +24,9 @@
     "browser-sync": "^2.18.13",
     "mobx": "^3.3.0",
     "npm-run-all": "^4.1.1",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
     "react-router": "^4.2.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "8.0.2",
