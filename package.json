@@ -5,14 +5,17 @@
   "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "rollup -c conf/dev.js -w",
-    "start": "rm -rf dist && npm-run-all --parallel build:dev browse",
-    "browse": "browser-sync start --s  --ss static dist --files html/**/*.html,dist/babeljs --no-notify"
+    "server:dev": "babel-node src/server",
+    "start": "rm -rf dist && npm run server:dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "http-proxy": "^1.16.2"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -21,7 +24,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "browser-sync": "^2.18.13",
+    "browser-sync": "2.18.13",
     "mobx": "^3.3.0",
     "npm-run-all": "^4.1.1",
     "react": "15.6.1",

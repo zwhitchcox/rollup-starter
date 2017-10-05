@@ -13,18 +13,20 @@ export default {
   input: 'src/main.js',
   output: {
     file: 'dist/bundle.js',
-    format: 'cjs'
+    format: 'iife'
   },
+  name: 'rollup_starter',
   plugins: [
     babel({
       babelrc: false,
       exclude: 'node_modules/**',
-      presets: [ [ 'env', { modules: false } ], 'stage-0', 'react' ],
+      presets: [ [ 'es2015', { modules: false } ], 'stage-0', 'react' ],
       plugins: [ 'external-helpers' ]
     }),
     cjs({
       exclude: 'node_modules/process-es6/**',
       include: [
+        'src/**',
         'node_modules/create-react-class/**',
         'node_modules/fbjs/**',
         'node_modules/object-assign/**',

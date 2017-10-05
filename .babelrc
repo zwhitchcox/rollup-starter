@@ -5,17 +5,12 @@
         "modules": false
       }
     ],
-    [ "env",
-      {
-        "modules": false
-      }
-    ],
+    "env",
     "stage-0",
     "react"
   ],
   "plugins": [
-    "transform-decorators-legacy",
-    "external-helpers"
+    "transform-decorators-legacy"
   ],
   "sourceMaps": "both"
 }

@@ -1,8 +1,17 @@
-const React = require('react')
-const ReactDOM = require('react-dom')
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-const root = document.querySelector('#app')
-ReactDOM.render(<div />, root)
+const socket = io()
+socket.on('reload', () => {
+  console.log('reloading')
+  location.reload()
+})
+
+const root = document.querySelector('main')
+
+
+ReactDOM.render(<div>hi right it is</div>, root)
+
 
 // Append the DummyComponent to the root element.
 
