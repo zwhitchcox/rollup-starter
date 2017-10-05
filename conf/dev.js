@@ -1,13 +1,8 @@
-import resolve from 'rollup-plugin-node-resolve';
-import cjs from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve'
+import cjs from 'rollup-plugin-commonjs'
 import globals from 'rollup-plugin-node-globals'
-import uglify from 'rollup-plugin-uglify';
 import babel from 'rollup-plugin-babel'
 import replace from 'rollup-plugin-replace'
-
-// `npm run build` -> `production` is true
-// `npm run dev` -> `production` is false
-const production = !process.env.ROLLUP_WATCH;
 
 export default {
   input: 'src/main.js',
@@ -15,7 +10,7 @@ export default {
     file: 'dist/bundle.js',
     format: 'iife'
   },
-  name: 'rollup_starter',
+  name: 'rollup-starter',
   plugins: [
     babel({
       babelrc: false,
@@ -26,7 +21,6 @@ export default {
     cjs({
       exclude: 'node_modules/process-es6/**',
       include: [
-        'src/**',
         'node_modules/create-react-class/**',
         'node_modules/fbjs/**',
         'node_modules/object-assign/**',
@@ -42,5 +36,5 @@ export default {
       main: true
     })
   ],
-  sourcemap: true,
-};
+  sourcemap: true
+}

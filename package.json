@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server:dev": "babel-node src/server",
-    "start": "rm -rf dist && npm run server:dev"
+    "bundle:dev": "rollup -c conf/dev.js -w",
+    "start": "rm -rf dist && yarn server:dev"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "2.18.13",
+    "gaze": "^1.1.2",
     "mobx": "^3.3.0",
     "npm-run-all": "^4.1.1",
     "react": "15.6.1",
