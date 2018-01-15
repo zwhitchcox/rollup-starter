@@ -1,14 +1,35 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import foo from './foo'
+import './setup'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import Home from './home'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import {green100, green500, green700} from 'material-ui/styles/colors'
 
 const socket = io()
-
 socket.on('reload', () => {
   location.reload()
 })
 
-const root = document.querySelector('main')
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: green500,
+    primary2Color: green700,
+    primary3Color: green100,
+  },
+}, {
+  avatar: {
+    borderColor: null,
+  },
+});
+
+class App extends Component {
+  render() {
+    return <MuiThemeProvider muiTheme={muiTheme}>
+      <Home />
+    </MuiThemeProvider>
+  }
+}
 
 
-ReactDOM.render(<div></div>, root)
+render(<App />, document.querySelector('#app'))

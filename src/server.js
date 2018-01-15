@@ -11,19 +11,17 @@ const server = app.listen(3000)
 const io = require('socket.io')(server)
 build()
 gaze(['src/**', 'static/**'], function() {
-  this.on('all', build)
+    this.on('all', build)
 })
 
-
 app.use(bodyParser.urlencoded({extended: true}))
-
 app.use(express.static('dist'))
 app.use(express.static('static'))
 
 let cache;
 function build() {
-  rollup(Object.assign({cache}, config))
-    .then(bundle => (cache = bundle) && bundle.write(config.output))
-    .then(() => io.sockets.emit('reload'))
-    .catch(console.error)
+    rollup({cache, entry: config.input, ...config})
+      .then(bundle => (cache = bundle) && bundle.write({...config, ...config.output}))
+      .then(() => io.sockets.emit('reload'))
+      .catch(console.error)
 }

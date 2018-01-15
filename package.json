@@ -15,7 +15,9 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.1",
-    "http-proxy": "^1.16.2"
+    "http-proxy": "^1.16.2",
+    "react-tap-event-plugin": "^3.0.2",
+    "rollup-plugin-css-only": "^0.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -27,6 +29,8 @@
     "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "2.18.13",
     "gaze": "^1.1.2",
+    "lodash": "^4.17.4",
+    "material-ui": "^0.19.3",
     "mobx": "^3.3.0",
     "npm-run-all": "^4.1.1",
     "react": "15.6.1",

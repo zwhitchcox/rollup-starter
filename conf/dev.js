@@ -1,8 +1,9 @@
 import resolve from 'rollup-plugin-node-resolve'
-import cjs from 'rollup-plugin-commonjs'
+import cjs from 'rollup-plugin-commonjs';
 import globals from 'rollup-plugin-node-globals'
 import babel from 'rollup-plugin-babel'
 import replace from 'rollup-plugin-replace'
+import css from 'rollup-plugin-css-only'
 
 export default {
   input: 'src/main.js',
@@ -34,7 +35,8 @@ export default {
     resolve({
       browser: true,
       main: true
-    })
+    }),
+    css({ output: 'bundle.css' }),
   ],
   sourcemap: true
 }
